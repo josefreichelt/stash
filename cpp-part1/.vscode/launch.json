@@ -16,9 +16,15 @@
             "externalConsole": true,
             "MIMode": "lldb",
             "preLaunchTask": "build",
+            "windows": {
+                "program":  "${workspaceFolder}\\out\\cpppart1",
+                "preLaunchTask": "buildwin",
+                "miDebuggerPath": "C:\\MinGW\\mingw64\\bin\\gdb.exe",
+                "MIMode": "gdb",
+            },
             "logging": {
                 "trace": false
-            }
+            },
         }
     ]
 }
