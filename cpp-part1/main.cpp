@@ -1,7 +1,11 @@
+// Primitive types
 #include <iostream>
 
+using namespace std;
+
 int main() {
-    std::cout << "Hello There" << std::endl;
-    std::cin.get();
+    char middle_initial = 'J';
+    cout << middle_initial << endl;
+
     return 0;
 }
