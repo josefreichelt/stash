@@ -19,7 +19,7 @@
                 "name": "Active File",
                 "request": "launch",
                 "type": "lldb",
-                "program":  "${workspaceFolder}\\out\\cpppart1",
+                "program":  "${fileDirname}/bin/${fileBasenameNoExtension}",
                 "preLaunchTask": "buildwin",
                 "miDebuggerPath": "C:\\MinGW\\mingw64\\bin\\gdb.exe",
                 "MIMode": "gdb",

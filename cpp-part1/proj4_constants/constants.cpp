@@ -13,23 +13,23 @@ int main() {
     const double pricePerLargeRoom{35.0};
     const double taxRate{0.06};
 
-    cout << "Number of small rooms to clean: " << numberOfSmallRooms << endl;
+    cout << "Number of small rooms to clean: " << endl;
     cin >> numberOfSmallRooms;
-    cout << "Number of large rooms to clean: " << numberOfLargeRooms << endl;
+    cout << "Number of large rooms to clean: " << endl;
     cin >> numberOfLargeRooms;
-    cout << "Price per small room: €" << pricePerSmallRoom << endl;
-    cout << "Price per small room: €" << pricePerLargeRoom << endl;
+    cout << "Price per small room: $" << pricePerSmallRoom << endl;
+    cout << "Price per small room: $" << pricePerLargeRoom << endl;
 
     double priceOfSmallRooms = pricePerSmallRoom * numberOfSmallRooms;
     double priceOfLargeRooms = pricePerLargeRoom * numberOfLargeRooms;
     double roomsTotal = priceOfSmallRooms + priceOfLargeRooms;
     double costOfTax = roomsTotal * taxRate;
 
-    cout << "Cost: €" << roomsTotal << endl;
-    cout << "Tax: €" << costOfTax << endl;
+    cout << "Cost: $" << roomsTotal << endl;
+    cout << "Tax: $" << costOfTax << endl;
     cout << "==================================" << endl;
 
-    cout << "Total estimate: €" << roomsTotal + costOfTax << endl;
+    cout << "Total estimate: $" << roomsTotal + costOfTax << endl;
     cout << "This estimate is valid for " << 30 << " days" << endl;
 
     return 0;

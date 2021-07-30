@@ -26,9 +26,9 @@
       "command": "g++",
       "args": [
         "-g",
-        "${workspaceFolder}\\main.cpp",
+        "${fileDirname}/*.cpp",
         "-o",
-        "${workspaceFolder}\\out\\cpppart1",
+        "${fileDirname}/bin/${fileBasenameNoExtension}",
         "-Wall",
         "-std=c++14"
       ],
