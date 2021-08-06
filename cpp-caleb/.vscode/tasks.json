@@ -3,6 +3,14 @@
     {
       "type": "cppbuild",
       "label": "buildmac",
+      "presentation": {
+          "echo": true,
+          "reveal": "never",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+      },
       "command": "/usr/bin/g++",
       "args": [
         "-g",
@@ -46,6 +54,14 @@
       "type": "shell",
       "options": {
         "cwd": "${fileDirname}"
+      },
+      "presentation": {
+          "echo": true,
+          "reveal": "never",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
       },
       "problemMatcher": ["$gcc"]
     }

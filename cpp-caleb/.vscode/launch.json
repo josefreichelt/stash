@@ -13,7 +13,7 @@
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "preLaunchTask": "buildmac",
             "windows": {
                 "name": "Active File",
