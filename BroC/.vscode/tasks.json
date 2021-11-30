@@ -10,7 +10,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}/bin/${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -22,7 +22,13 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "compiler: C:\\MinGW\\mingw64\\bin\\gcc.exe"
+            "detail": "compiler: C:\\MinGW\\mingw64\\bin\\gcc.exe",
+            "dependsOn": ["createbin"]
+        },
+        {
+            "label": "createbin",
+            "type": "shell",
+            "command": "mkdir -p bin"
         }
     ]
 }
