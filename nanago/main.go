@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"nanago/helper"
 	"strings"
 )
 
@@ -18,7 +19,7 @@ func main() {
 
 	for remainingTickets > 0 && len(bookings) < 50 {
 		firstName, lastName, email, userTickets := getUserInput()
-		isValidName, isValidEmail, isValidTicketCount := validateUserInput(firstName, lastName, email, userTickets, remainingTickets)
+		isValidName, isValidEmail, isValidTicketCount := helper.ValidateUserInput(firstName, lastName, email, userTickets, remainingTickets)
 
 		if isValidName && isValidEmail && isValidTicketCount {
 			bookTicket(userTickets, firstName, lastName, email)
@@ -57,14 +58,6 @@ func getFirstNames(bookings []string) []string {
 		firstNames = append(firstNames, names[0])
 	}
 	return firstNames
-}
-
-func validateUserInput(firstName string, lastName string, email string, userTickets uint8, remainingTickets uint8) (bool, bool, bool) {
-	var isValidName bool = len(firstName) >= 2 && len(lastName) >= 2
-	var isValidEmail bool = strings.Contains(email, "@")
-	var isValidTicketCount bool = userTickets <= remainingTickets && userTickets > 0
-
-	return isValidName, isValidEmail, isValidTicketCount
 }
 
 func getUserInput() (string, string, string, uint8) {
