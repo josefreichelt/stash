@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"nanago/helper"
-	"strconv"
 )
 
 // Package level variables
@@ -11,7 +10,14 @@ const conferenceName string = "Go Conference"
 const conferenceTickets = 50
 
 var remainingTickets uint8 = 50
-var bookings = make([]map[string]string, 0)
+var bookings = make([]UserData, 0)
+
+type UserData struct {
+	firstName string
+	lastName string
+	email string
+	numberOfTickets uint8
+}
 
 func main() {
 
@@ -54,7 +60,7 @@ func greetUsers(conferenceTickets int, remainingTickets uint8) {
 func getFirstNames() []string {
 	firstNames := []string{}
 	for _, booking := range bookings {
-		firstNames = append(firstNames, booking["firstName"])
+		firstNames = append(firstNames, booking.firstName)
 	}
 	return firstNames
 }
@@ -81,11 +87,12 @@ func bookTicket(userTickets uint8, firstName string, lastName string, email stri
 	remainingTickets = remainingTickets - userTickets
 
 	// create a map for a user
-	var userData = make(map[string]string)
-	userData["firstName"] = firstName
-	userData["lastName"] = lastName
-	userData["email"] = email
-	userData["numberOfTickets"] = strconv.FormatUint(uint64(userTickets), 10)
+	var userData = UserData {
+		firstName: firstName,
+		lastName: lastName,
+		email: email,
+		numberOfTickets: userTickets,
+	}
 
 	bookings = append(bookings, userData)
 	fmt.Printf("%v\n", userData)
