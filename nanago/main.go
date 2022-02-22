@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"nanago/helper"
+	"sync"
+	"time"
 )
 
 // Package level variables
@@ -13,11 +15,13 @@ var remainingTickets uint8 = 50
 var bookings = make([]UserData, 0)
 
 type UserData struct {
-	firstName string
-	lastName string
-	email string
+	firstName       string
+	lastName        string
+	email           string
 	numberOfTickets uint8
 }
+
+var wg = sync.WaitGroup{}
 
 func main() {
 
@@ -29,6 +33,10 @@ func main() {
 
 		if isValidName && isValidEmail && isValidTicketCount {
 			bookTicket(userTickets, firstName, lastName, email)
+
+			wg.Add(1)
+			go sendTicket(userTickets, firstName, lastName, email)
+
 			firstNames := getFirstNames()
 			fmt.Printf("📅 These are first names of bookings: %v\n", firstNames)
 
@@ -48,6 +56,7 @@ func main() {
 		}
 	}
 
+	wg.Wait()
 }
 
 func greetUsers(conferenceTickets int, remainingTickets uint8) {
@@ -87,10 +96,10 @@ func bookTicket(userTickets uint8, firstName string, lastName string, email stri
 	remainingTickets = remainingTickets - userTickets
 
 	// create a map for a user
-	var userData = UserData {
-		firstName: firstName,
-		lastName: lastName,
-		email: email,
+	var userData = UserData{
+		firstName:       firstName,
+		lastName:        lastName,
+		email:           email,
 		numberOfTickets: userTickets,
 	}
 
@@ -100,4 +109,13 @@ func bookTicket(userTickets uint8, firstName string, lastName string, email stri
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will recieve a confirmation email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
+}
+
+func sendTicket(userTickets uint8, firstName string, lastName string, email string) {
+	time.Sleep(10 * time.Second)
+	var ticket = fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
+	fmt.Println("📤")
+	fmt.Printf("Sending ticket:\n%v to email address %v\n", ticket, email)
+	fmt.Println("______")
+	wg.Done()
 }
