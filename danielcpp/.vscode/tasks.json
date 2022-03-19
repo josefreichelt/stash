@@ -36,7 +36,7 @@
                 "-std=c++20"
             ],
             "options": {
-                "cwd": "${workspaceFolder}"
+                "cwd": "${fileDirname}"
             },
             "problemMatcher": ["$gcc"],
             "group": "build",
@@ -48,7 +48,7 @@
             "command": "rm -rfv ./bin && mkdir -p bin -v",
             "type": "shell",
             "options": {
-                "cwd": "${workspaceFolder}"
+                "cwd": "${fileDirname}"
             },
             "presentation": {
                 "echo": true,
