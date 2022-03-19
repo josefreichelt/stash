@@ -1,24 +1,19 @@
 #include <iostream>
 
+int addNumbers(int first_number, int second_number)
+{
+    int sum = first_number + second_number;
+    return sum;
+}
+
 int main()
 {
-    // THIS IS A COMMENT, WOOOOOO
+    int first_number{3};
+    int second_number{7};
 
-    /*
-        THIS
-        IS
-        A
-        MULTI
-        LINE
-        COMMENT
-        WOOOOOO
-    */
-    std::cout << "Number 1" << std::endl;
-    std::cout << "Number 2" << std::endl;
-    std::cout << "Number 3" << std::endl;
+    std::cout << "First number: " << first_number << std::endl;
+    std::cout << "Second number: " << second_number << std::endl;
 
-    // Run time error
-    int value = 7 / 0;
-    std::cout << value << std::endl;
+    std::cout << "Sum is: " << addNumbers(first_number, second_number) << std::endl;
     return 0;
 }
