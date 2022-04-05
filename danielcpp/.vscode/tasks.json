@@ -45,7 +45,7 @@
         },
         {
             "label": "prepareBinFolder",
-            "command": "rm -rfv ./bin && mkdir -p bin -v",
+            "command": "rm -rfv ./bin && mkdir -p -v bin",
             "type": "shell",
             "options": {
                 "cwd": "${fileDirname}"
