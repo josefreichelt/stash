@@ -11,7 +11,10 @@
             "program": "${fileDirname}/../target/debug/prog",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "rust: cargo build"
+            "preLaunchTask": "rust: cargo build",
+            "windows": {
+                "program": "${fileDirname}/../target/debug/prog.exe"
+            }
         }
     ]
 }
