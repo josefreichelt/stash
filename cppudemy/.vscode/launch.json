@@ -12,7 +12,7 @@
             "args": [],
             "cwd": "${workspaceFolder}",
             "terminal": "integrated",
-            "preLaunchTask": "buildcpp",
+            "preLaunchTask": "buildcpp-activefile",
             "windows": {
                 "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
                 "preLaunchTask": "buildcppwin"

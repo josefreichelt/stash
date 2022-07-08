@@ -24,6 +24,27 @@
         },
         {
             "type": "cppbuild",
+            "label": "buildcpp-activefile",
+            "command": "clang++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/bin/${fileBasenameNoExtension}",
+                "-Wall",
+                "-std=c++20"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "detail": "compiler: /usr/local/opt/llvm/bin/clang++",
+            "dependsOn": ["prepareBinFolder"]
+        },
+        {
+            "type": "cppbuild",
             "label": "buildcppwin",
             "command": "C://bin/mingw64/bin/g++.exe",
             "args": [
