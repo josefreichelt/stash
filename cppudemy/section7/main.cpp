@@ -37,4 +37,14 @@ int main()
     cout << test_scores2[2] << endl;
     cout << test_scores2[3] << endl;
     cout << test_scores2[4] << endl;
+
+    // multi dimensional array
+    const int rows{3};
+    const int cols{4};
+
+    int movie_rating[rows][cols]{
+        {0, 4, 3, 5},
+        {0, 1, 4, 5},
+        {0, 2, 5, 5},
+    };
 }
